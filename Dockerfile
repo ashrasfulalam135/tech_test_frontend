@@ -4,7 +4,7 @@ FROM node:18.12.1
 WORKDIR /app/frontend
 
 # Copy package.json and package-lock.json to the container
-COPY package*.json /app/frontend
+COPY package.json /app/frontend
 
 # Install project dependencies
 RUN npm install

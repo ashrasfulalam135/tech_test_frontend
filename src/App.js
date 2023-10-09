@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import SqlParserFrom from "./components/SqlParserForm";
+import SqlParseOutput from "./components/SqlParseOutput";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [parsedData, setParsedData] = useState(null);
+
+	const handleSqlSubmit = (data) => {
+		setParsedData(data);
+	};
+
+	return (
+		<div className="content">
+			<div className="container">
+				<SqlParserFrom onSqlSubmit={handleSqlSubmit} />
+				{parsedData ? <SqlParseOutput parsedData={parsedData} /> : ""}
+			</div>
+		</div>
+	);
 }
 
 export default App;
