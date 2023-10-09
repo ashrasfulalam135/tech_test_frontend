@@ -224,3 +224,19 @@ label.error {
 #test_purpose {
 	display: none;
 }
+
+.bg-app {
+	background-color: #ef4339;
+}
+
+.navbar-brand,
+.nav-link,
+.navbar-nav .nav-link.active,
+.navbar-brand:hover,
+.nav-link:hover {
+	color: #fff;
+}
+
+.table {
+	color: #8c8c8c;
+}
