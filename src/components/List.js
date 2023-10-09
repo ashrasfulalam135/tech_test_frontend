@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { format } from "sql-formatter";
 
 function List() {
-	const apiUrl = process.env.REACT_APP_API_URL;
-
 	const [parsedSqlList, setParsedSqlList] = useState([]);
-	const [currentPage, setCurrentPage] = useState(1);
-	const [itemsPerPage] = useState(20); // Number of items to display per page
+	const apiUrl = process.env.REACT_APP_API_URL;
 
 	// Fetch parsed SQL entries from the API
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await fetch(`${apiUrl}?offset=0&limit=100`, {
+				const response = await fetch(`${apiUrl}`, {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json",
